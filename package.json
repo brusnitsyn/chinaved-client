@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.1.110",
+    "husky": "^8.0.1",
+    "nuxt": "3.0.0-rc.10",
+    "nuxt-windicss": "^2.5.2",
+    "sass": "^1.54.9",
+    "sass-loader": "13.0.2",
+    "unplugin-icons": "^0.14.10",
+    "unplugin-vue-components": "^0.22.7"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.2"
+  }
+}
