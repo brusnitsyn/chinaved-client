@@ -71,7 +71,7 @@ export default defineConfig({
                 slate: colors.slate,
             },
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
             },
         },
     },

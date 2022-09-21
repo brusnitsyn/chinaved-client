@@ -42,7 +42,7 @@ const menus = computed((): IMenuItem[] => [
     <template #menu>
       <div class="relative hidden lg:flex items-center ml-auto">
         <nav
-            class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300"
+            class="text-sm leading-6 font-medium text-gray-600 dark:text-gray-300"
             role="navigation"
         >
           <ul class="flex items-center space-x-8">
@@ -57,8 +57,8 @@ const menus = computed((): IMenuItem[] => [
               <Button
                   v-else-if="item.type === 'button'"
                   :text="item.text"
-                  size="xs"
-                  class="font-extrabold capitalize"
+                  size="sm"
+                  class="font-semibold capitalize"
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
               />
@@ -76,7 +76,7 @@ const menus = computed((): IMenuItem[] => [
       <ActionSheet @onClose="toggleOptions(false)">
         <ActionSheetBody>
           <ActionSheetHeader text="Мобильное меню" />
-          <nav class="leading-6 font-semibold text-gray-600 dark:text-gray-300">
+          <nav class="leading-6 font-medium text-gray-600 dark:text-gray-300">
             <ul class="flex flex-col">
               <li
                   v-for="(item, i) in menus"
@@ -97,15 +97,14 @@ const menus = computed((): IMenuItem[] => [
                 <Button
                     v-else-if="item.type === 'button'"
                     :text="item.text"
-
-                    class="flex-1 font-extrabold capitalize"
+                    class="flex-1 capitalize"
                     :to="item.route ? item.route : undefined"
                     :href="item.href ? item.href : undefined"
                 />
               </li>
             </ul>
           </nav>
-          <div class="mt-6 text-sm font-bold capitalize">
+          <div class="mt-6 text-sm font-medium capitalize">
             Сменить тему
           </div>
           <div class="mt-2">
@@ -114,6 +113,7 @@ const menus = computed((): IMenuItem[] => [
         </ActionSheetBody>
         <Button
             text="Закрыть"
+            size="sm"
             type="secondary"
             @click.prevent="toggleOptions(false)"
         />

@@ -18,7 +18,7 @@ const slots = useSlots()
       <span class="flex justify-center items-center">
           <IconCarbon:arrow-left/>
       </span>
-      <span class="font-semibold">
+      <span class="font-medium">
         В магазин
       </span>
     </NuxtLink>

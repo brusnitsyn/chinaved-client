@@ -27,8 +27,12 @@ export default defineNuxtConfig({
         '~/assets/sass/app.scss',
     ],
 
+    plugins: [
+        '~/plugins/navbar.ts'
+    ],
+
     build: {
-        transpile: ['@headlessui/vue'],
+        transpile: ['@headlessui/vue', 'swiper'],
     },
 
     modules: [

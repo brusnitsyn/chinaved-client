@@ -5,5 +5,11 @@
 </script>
 
 <template>
-
+  <PageWrapper>
+    <PageBody>
+      <PageSection>
+        <PageSectionTitle text="Таможенный сервис" />
+      </PageSection>
+    </PageBody>
+  </PageWrapper>
 </template>

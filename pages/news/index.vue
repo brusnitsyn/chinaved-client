@@ -5,5 +5,11 @@
 </script>
 
 <template>
-
+  <PageWrapper>
+    <PageBody>
+      <PageSection>
+        <PageSectionTitle text="Новости" />
+      </PageSection>
+    </PageBody>
+  </PageWrapper>
 </template>

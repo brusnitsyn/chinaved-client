@@ -1,14 +1,15 @@
 <script lang="ts" setup>
-  definePageMeta({
-    layout: 'page'
-  })
+definePageMeta({
+  layout: 'page'
+})
 </script>
 
 <template>
   <PageWrapper>
     <PageBody>
       <PageSection>
-        <PageSectionTitle text="Контакты" />
+        <PageSectionTitle text="Мой профиль" />
+
       </PageSection>
     </PageBody>
   </PageWrapper>
