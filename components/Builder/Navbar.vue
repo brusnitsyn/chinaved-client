@@ -6,6 +6,7 @@ const app = useState<IApp>('app')
 const navbar = ref(null)
 const showDrawer = useState<boolean>('navbar.showDrawer', () => false)
 const showOptions = useState<boolean>('navbar.showOptions', () => false)
+const showSearchOptions = useState<boolean>('navbar.showSearchOptions', () => false)
 
 // lifecycle
 let timer: NodeJS.Timer
@@ -99,18 +100,30 @@ const toggleOptions = (show?: boolean) => {
           <!-- options:toggle -->
           <div
               v-if="$slots['options']"
-              class="flex-1 flex justify-end lg:hidden"
+              class="flex-1 flex justify-end lg:hidden items-center gap-x-4"
           >
+            <button
+                class="flex items-center focus:outline-none"
+                aria-label="To Search Page"
+                @click="$router.push({name: 'search'})"
+            >
+              <span
+                  class="flex items-center text-gray-600 dark:text-gray-300"
+                  aria-hidden="true"
+              >
+                <IconCharm:search />
+              </span>
+            </button>
             <button
                 class="flex items-center focus:outline-none"
                 aria-label="Toggle Options Menu"
                 @click="toggleOptions()"
             >
               <span
-                  class="flex items-center text-gray-600 dark:text-gray-300 text-sm"
+                  class="flex items-center text-gray-600 dark:text-gray-300"
                   aria-hidden="true"
               >
-                <icon-fa-solid:ellipsis-v />
+                <IconCharm:menu-hamburger />
               </span>
             </button>
           </div>

@@ -34,5 +34,10 @@ html.dark {
   }
 }
 
+// swiper
+:root {
+  --swiper-theme-color: theme('colors.green.500') !important;
+}
+
 // animations
 @import 'animations/transitions';

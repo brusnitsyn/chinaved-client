@@ -7,7 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    'IconBytesize:search': typeof import('~icons/bytesize/search')['default']
     'IconCarbon:arrowLeft': typeof import('~icons/carbon/arrow-left')['default']
+    'IconCarbon:search': typeof import('~icons/carbon/search')['default']
+    'IconCharm:menuHamburger': typeof import('~icons/charm/menu-hamburger')['default']
+    'IconCharm:search': typeof import('~icons/charm/search')['default']
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
     'IconMdi:githubFace': typeof import('~icons/mdi/github-face')['default']
     'IconSimpleIcons:nuxtdotjs': typeof import('~icons/simple-icons/nuxtdotjs')['default']

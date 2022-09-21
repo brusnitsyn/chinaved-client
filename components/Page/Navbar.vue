@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { IApp } from '~/utils/app'
+import {IApp} from '~/utils/app'
 
 export interface IMenuItem {
   type: 'link' | 'button'
@@ -10,15 +10,15 @@ export interface IMenuItem {
 
 const app = useState<IApp>('app')
 const menus = computed((): IMenuItem[] => [
-  { type: 'link', text: 'Главная', route: { name: 'index' } },
-  { type: 'link', text: 'Каталог', route: { name: 'catalog' } },
-  { type: 'link', text: 'Таможенный сервис', route: { name: 'service' } },
-  { type: 'link', text: 'Новости', route: { name: 'news' } },
-  { type: 'link', text: 'Контакты', route: { name: 'contacts' } },
+  {type: 'link', text: 'Главная', route: {name: 'index'}},
+  {type: 'link', text: 'Каталог', route: {name: 'catalog'}},
+  {type: 'link', text: 'Таможенный сервис', route: {name: 'service'}},
+  {type: 'link', text: 'Новости', route: {name: 'news'}},
+  {type: 'link', text: 'Контакты', route: {name: 'contacts'}},
   {
     type: 'button',
     text: 'Вход / регистрация',
-    route: { name: 'auth-login' },
+    route: {name: 'auth-login'},
   },
 ])
 </script>
@@ -52,7 +52,8 @@ const menus = computed((): IMenuItem[] => [
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
                   class="hover:no-underline hover:text-slate-900 hover:dark:text-white capitalize"
-              >{{ item.text }}</Anchor
+              >{{ item.text }}
+              </Anchor
               >
               <Button
                   v-else-if="item.type === 'button'"
@@ -68,14 +69,26 @@ const menus = computed((): IMenuItem[] => [
         <div
             class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
         >
-          <ThemeSwitcher />
+          <button
+              class="flex items-center focus:outline-none"
+              aria-label="To Search Page"
+              @click="$router.push({name: 'search'})"
+          >
+              <span
+                  class="flex items-center text-gray-600 dark:text-gray-300"
+                  aria-hidden="true"
+              >
+                <IconCharm:search/>
+              </span>
+          </button>
+          <ThemeSwitcher/>
         </div>
       </div>
     </template>
     <template #options="{ toggleOptions }">
       <ActionSheet @onClose="toggleOptions(false)">
         <ActionSheetBody>
-          <ActionSheetHeader text="Мобильное меню" />
+          <ActionSheetHeader text="Мобильное меню"/>
           <nav class="leading-6 font-medium text-gray-600 dark:text-gray-300">
             <ul class="flex flex-col">
               <li
@@ -92,7 +105,8 @@ const menus = computed((): IMenuItem[] => [
                     :to="item.route ? item.route : undefined"
                     :href="item.href ? item.href : undefined"
                     class="flex-1 hover:no-underline capitalize"
-                >{{ item.text }}</Anchor
+                >{{ item.text }}
+                </Anchor
                 >
                 <Button
                     v-else-if="item.type === 'button'"
@@ -108,7 +122,7 @@ const menus = computed((): IMenuItem[] => [
             Сменить тему
           </div>
           <div class="mt-2">
-            <ThemeSwitcher type="select-box" />
+            <ThemeSwitcher type="select-box"/>
           </div>
         </ActionSheetBody>
         <Button
