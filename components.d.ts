@@ -13,6 +13,8 @@ declare module '@vue/runtime-core' {
     'IconCharm:menuHamburger': typeof import('~icons/charm/menu-hamburger')['default']
     'IconCharm:search': typeof import('~icons/charm/search')['default']
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
+    'IconMaterialSymbols:borderAllRounded': typeof import('~icons/material-symbols/border-all-rounded')['default']
+    'IconMaterialSymbols:checkCircleOutlineRounded': typeof import('~icons/material-symbols/check-circle-outline-rounded')['default']
     'IconMdi:githubFace': typeof import('~icons/mdi/github-face')['default']
     'IconSimpleIcons:nuxtdotjs': typeof import('~icons/simple-icons/nuxtdotjs')['default']
     'IconUil:arrowLeft': typeof import('~icons/uil/arrow-left')['default']

@@ -6,7 +6,6 @@ const app = useState<IApp>('app')
 const navbar = ref(null)
 const showDrawer = useState<boolean>('navbar.showDrawer', () => false)
 const showOptions = useState<boolean>('navbar.showOptions', () => false)
-const showSearchOptions = useState<boolean>('navbar.showSearchOptions', () => false)
 
 // lifecycle
 let timer: NodeJS.Timer

@@ -2,13 +2,15 @@
 definePageMeta({
   layout: 'page'
 })
+
+const username = 'Андрей'
 </script>
 
 <template>
   <PageWrapper>
     <PageBody>
       <PageSection>
-        <PageSectionTitle text="Мой профиль" />
+        <PageSectionTitle :text="`Привет, ${username}`" />
 
       </PageSection>
     </PageBody>
