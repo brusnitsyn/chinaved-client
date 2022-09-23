@@ -37,7 +37,7 @@ onMounted(() => {
               class="fixed inset-0 w-screen z-50 flex"
           >
             <div
-                class="relative max-w-8xl px-4 pb-4 w-full mx-auto flex flex-col flex-1 space-y-1 overflow-y-auto justify-center"
+                class="relative max-w-4xl md:px-4 md:pb-8 md:pt-8 w-full md:mx-auto flex flex-col flex-1 space-y-1 justify-center"
             >
               <slot/>
             </div>

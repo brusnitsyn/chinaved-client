@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 
 const showDrawer = useState<boolean>('catalogDrawer.showDrawer', () => false)
 const showContent = useState<boolean>('catalogDrawer.showContent', () => false)
@@ -53,17 +54,47 @@ const toggleContent = (show?: boolean) => {
             <div class="flex-1 flex flex-col relative overflow-y-auto">
               <DialogSheet @onClose="toggleContent(false)">
                 <DialogSheetBody>
-                  <DialogSheetHeader text="Фильтры"/>
-                  <div>
-
+                  <DialogSheetHeader text="Фильтры" @onClickClose="toggleDrawer(false)"/>
+                  <div class="w-full pt-4 h-full overflow-y-auto">
+                    <div class="w-full rounded-2xl py-2 overflow-y-auto">
+                      <Disclosure v-slot="{ open }">
+                        <DisclosureButton
+                            class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-3 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                        >
+                          <span>Цена</span>
+                          <IconCharm:chevron-up
+                              :class="open ? 'rotate-180 transform' : ''"
+                              class="h-5 w-5 text-purple-500"
+                          />
+                        </DisclosureButton>
+                        <DisclosurePanel class="px-4 pt-4 pb-2 text-sm text-gray-500">
+                          If you're unhappy with your purchase for any reason, email us within
+                          90 days and we'll refund you in full, no questions asked.
+                        </DisclosurePanel>
+                      </Disclosure>
+                      <Disclosure as="div" class="mt-2" v-slot="{ open }">
+                        <DisclosureButton
+                            class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-3 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                        >
+                          <span>Производитель</span>
+                          <IconCharm:chevron-up
+                              :class="open ? 'rotate-180 transform' : ''"
+                              class="h-5 w-5 text-purple-500"
+                          />
+                        </DisclosureButton>
+                        <DisclosurePanel class="px-4 pt-4 pb-2 text-sm text-gray-500">
+                          No.
+                        </DisclosurePanel>
+                      </Disclosure>
+                    </div>
                   </div>
                 </DialogSheetBody>
-                <Button
-                    text="Закрыть"
-                    size="sm"
-                    type="secondary"
-                    @click.prevent="toggleDrawer(false)"
-                />
+<!--                <Button-->
+<!--                    text="Закрыть"-->
+<!--                    size="sm"-->
+<!--                    type="secondary"-->
+<!--                    @click.prevent="toggleDrawer(false)"-->
+<!--                />-->
               </DialogSheet>
             </div>
           </div>
